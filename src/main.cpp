@@ -47,14 +47,18 @@ void repeatedCall() {
   }
   if ((currentMillis - previousMillis_2) >= mini_interval) {
     previousMillis_2 = currentMillis;
-    Serial.print("idle loop...");
+    Serial.print("idle loop... ");
     Serial.print(num++);
-    Serial.print(" Active fw version:");
+    Serial.print("  Active fw version:");
     Serial.println(FirmwareVer);
     digitalWrite(LED_BUILTIN, num%2);
+
+  Serial.println("  IP address: ");
+  Serial.println(WiFi.localIP());
+
    if(WiFi.status() == WL_CONNECTED) 
    {
-       Serial.println("wifi connected FW:V0.3");
+       Serial.println("  wifi connected ---> FW: 0.4 ");
    }
    else
    {
@@ -97,7 +101,7 @@ void setup() {
 }
 void loop() {
   if (button_boot.pressed) { //to connect wifi via Android esp touch app 
-    Serial.println("Firmware update Starting..");
+    Serial.println("  Firmware update Starting..");
     firmwareUpdate();
     button_boot.pressed = false;
   }
@@ -113,7 +117,7 @@ void connect_wifi() {
   }
 
   Serial.println("");
-  Serial.println("WiFi connected fw Ver 0.3");
+  Serial.println("WiFi connected  --> ");
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 }
