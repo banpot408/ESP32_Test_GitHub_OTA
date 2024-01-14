@@ -13,7 +13,7 @@ const char * password = "0931236659";
 
 
 String FirmwareVer = {
-  "0.3"
+  "0.4"
 };
 //#define URL_fw_Version "https://raw.githubusercontent.com/banpot408/ESP32-ESP8266-ota-by-github/main/esp32_ota/bin_version.txt"
 // #define URL_fw_Version  "https://raw.githubusercontent.com/banpot408/ESP32-ESP8266-ota-by-github/main/banpot_test_ota/bin_version.txt?token=AHHVJYD5GHAMS33LZJ7SF53A7SOF6"
@@ -53,8 +53,8 @@ void repeatedCall() {
     Serial.println(FirmwareVer);
     digitalWrite(LED_BUILTIN, num%2);
 
-  Serial.println("  IP address: ");
-  Serial.println(WiFi.localIP());
+    Serial.println("  IP address: ");
+    Serial.println(WiFi.localIP());
 
    if(WiFi.status() == WL_CONNECTED) 
    {
