@@ -8,17 +8,21 @@
 
 #define LED_BUILTIN 2
 
-const char * ssid = "Mooniz1011";
-const char * password = "0624820181";
+const char * ssid = "PCN-ELEC-2G4";
+const char * password = "0931236659";
 
 
 String FirmwareVer = {
-  "2.6"
+  "0.2"
 };
 //#define URL_fw_Version "https://raw.githubusercontent.com/banpot408/ESP32-ESP8266-ota-by-github/main/esp32_ota/bin_version.txt"
-#define URL_fw_Version  "https://raw.githubusercontent.com/banpot408/ESP32-ESP8266-ota-by-github/main/banpot_test_ota/bin_version.txt?token=AHHVJYD5GHAMS33LZJ7SF53A7SOF6"
-#define URL_fw_Bin      "https://raw.githubusercontent.com/banpot408/ESP32-ESP8266-ota-by-github/main/banpot_test_ota/fw.bin"
+// #define URL_fw_Version  "https://raw.githubusercontent.com/banpot408/ESP32-ESP8266-ota-by-github/main/banpot_test_ota/bin_version.txt?token=AHHVJYD5GHAMS33LZJ7SF53A7SOF6"
+// #define URL_fw_Bin      "https://raw.githubusercontent.com/banpot408/ESP32-ESP8266-ota-by-github/main/banpot_test_ota/fw.bin"
 //#define URL_fw_Bin     "https://raw.githubusercontent.com/banpot408/ESP32-ESP8266-ota-by-github/main/esp32_ota/fw.bin"
+
+#define URL_fw_Version  "https://raw.githubusercontent.com/banpot408/ESP32_Test_GitHub_OTA/main/bin/bin_version.txt?token=AHHVJYD5GHAMS33LZJ7SF53A7SOF6"
+#define URL_fw_Bin      "https://raw.githubusercontent.com/banpot408/ESP32_Test_GitHub_OTA/main/bin/fw.bin"
+                         
 
 //#define URL_fw_Version "http://cade-make.000webhostapp.com/version.txt"
 //#define URL_fw_Bin "http://cade-make.000webhostapp.com/firmware.bin"
@@ -85,7 +89,7 @@ void IRAM_ATTR isr() {
 void setup() {
   pinMode(button_boot.PIN, INPUT);
   attachInterrupt(button_boot.PIN, isr, RISING);
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.print("Active firmware version:");
   Serial.println(FirmwareVer);
   pinMode(LED_BUILTIN, OUTPUT);
